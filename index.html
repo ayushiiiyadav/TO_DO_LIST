@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO LIST</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="sparkles" id="sparkles-container"></div>
+
+    <header>
+        <div class="header-content">
+            <span class="header-icon">🍓</span>
+            <h1>To-Do list</h1>
+            <span class="header-icon">🌸</span>
+        </div>
+        <p class="header-sub"> stay productive ✨</p>
+    </header>
+
+    <div class="stats-bar">
+        <div class="stat-pill">
+            <span class="stat-num" id="total-count">0</span>
+            <span class="stat-label">Total</span>
+        </div>
+        <div class="stat-pill active-pill">
+            <span class="stat-num" id="active-count">0</span>
+            <span class="stat-label">Active</span>
+        </div>
+        <div class="stat-pill done-pill">
+            <span class="stat-num" id="done-count">0</span>
+            <span class="stat-label">Done </span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+
+            <div class="input-row">
+                <div class="input-wrap">
+                    <span class="input-icon">📝</span>
+                    <input type="text" id="input-box" placeholder="Add a new task..." maxlength="80" autocomplete="off">
+                    <span class="char-count" id="char-count">0/80</span>
+                </div>
+                <button id="add-btn" onclick="addTask()">
+                    <span class="btn-icon">＋</span>
+                    <span>Add</span>
+                </button>
+            </div>
+
+            <div class="filter-tabs">
+                <button class="tab active" data-filter="all" onclick="filterTasks('all')">All</button>
+                <button class="tab" data-filter="active" onclick="filterTasks('active')">Active</button>
+                <button class="tab" data-filter="completed" onclick="filterTasks('completed')">Completed</button>
+            </div>
+
+            <ul id="list-container"></ul>
+
+            <div class="empty-state" id="empty-state">
+                <div class="empty-mascot">🍓</div>
+                <p class="empty-title">No tasks yet!</p>
+                <p class="empty-sub">Add something fresh to do ☁️</p>
+            </div>
+
+            <div class="bottom-bar" id="bottom-bar" style="display:none">
+                <button class="clear-btn" onclick="clearCompleted()">
+                    🗑️ Clear completed
+                </button>
+                <button class="clear-all-btn" onclick="clearAll()">
+                    ✨ Clear all
+                </button>
+            </div>
+
+            <div class="mascot">
+                <div class="mascot-img">🍓</div>
+                <div class="mascot-bubble" id="mascot-bubble">Let's get things done!</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="celebration" id="celebration">
+        <div class="celebration-text"> All done! amazing! 🎉</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
